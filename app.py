@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.write("My first App!")
-st.write("Second line.")
-st.write("Line 3.")
-st.write("Line 4. This has more text.")
+st.title("Video Notes")
+st.divider()
+st.subheader("Paste in URL to YouTube Video:")
+
+url = st.text_input('YouTube URL')
