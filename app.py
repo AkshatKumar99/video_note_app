@@ -3,10 +3,16 @@ from helper_functions import get_youtube_transcript
 
 st.title("Video Notes")
 st.divider()
-st.subheader("Paste in URL to YouTube Video:")
 
-url = st.text_input('YouTube URL')
+col1, col2 = st.columns([0.3, 0.6])
 
-transcript = get_youtube_transcript(url)
+with col1:
+    st.subheader("Paste in URL to YouTube Video:")
+    url = st.text_input('YouTube URL')
 
-st.write(transcript)
+with col2:
+    transcript = get_youtube_transcript(url)
+    with st.expander("Retrieved Transcript:"):
+        
+        tr = f"""{transcript}"""
+        st.write(tr)
